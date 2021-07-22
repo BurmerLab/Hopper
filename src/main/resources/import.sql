@@ -8,7 +8,7 @@ insert into post(id, title, content, created) values (7, 'Test post 7', 'Content
 insert into post(id, title, content, created) values (8, 'Test post 8', 'Content 8', '2020-01-30T13:14:05.568535200');
 insert into post(id, title, content, created) values (9, 'Test post 9', 'Content 9', '2020-01-31T13:14:05.568535200');
 insert into post(id, title, content, created) values (10, 'Test post 10', 'Content 10', '2020-02-01T13:14:05.569504');
-insert into post(id, title, content, created) values (11, 'Test post 11', 'Content 11', '2020-02-02T13:14:05.570479800');
+insert into POST(id, title, content, created) values (11, 'Test post 11', 'Content 11', '2020-02-02T13:14:05.570479800');
 insert into post(id, title, content, created) values (12, 'Test post 12', 'Content 12', '2020-02-03T13:14:05.570479800');
 insert into post(id, title, content, created) values (13, 'Test post 13', 'Content 13', '2020-02-04T13:14:05.571456800');
 insert into post(id, title, content, created) values (14, 'Test post 14', 'Content 14', '2020-02-05T13:14:05.571456800');

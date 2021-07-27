@@ -1,0 +1,25 @@
+package com.hopper.restapi.controller.dto;
+
+import com.hopper.restapi.model.Post;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class PostDtoMapper {
+
+    private PostDtoMapper() {}
+
+    public static List<PostDto> mapToPostDtos(List<Post> allPosts) {
+        return allPosts.stream().map(PostDtoMapper::mapToPostDto).collect(Collectors.toList());
+    }
+
+    public static PostDto mapToPostDto(Post post) {
+        return PostDto.builder()
+                .id(post.getId())
+                .title(post.getTitle())
+                .content(post.getContent())
+                .created(post.getCreated())
+                .build();
+    }
+
+}

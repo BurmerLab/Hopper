@@ -16,7 +16,7 @@ public class Controller {
         return newspaperService.getHello();
     }
 
-    /*Injection types:
+    /*Injection other ways:
     1) @Autowired on field
     2) @Autowired on setter of field
     3) Constructor with or without @Autowired or Lombok @RequiredArgsConstructor

@@ -4,6 +4,7 @@ import com.hopper.restapi.model.Post;
 import com.hopper.restapi.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,8 +20,8 @@ public class PostService {
         return postRepository.findAll();
     }
 
-    public List<Post> getAllPosts(int page) {
-        return postRepository.findAllPosts(PageRequest.of(page, PAGE_MAX_SIZE));
+    public List<Post> getSortedPostsByPageNumber(int page, Sort.Direction sort) {
+        return postRepository.findAllPosts(PageRequest.of(page, PAGE_MAX_SIZE, Sort.by(sort, "id")));
     }
 
     public Post getPost(Long postId) {

@@ -25,8 +25,8 @@ public class Post {
     @JoinColumn(name = "post_id") //DB column name, if in Comments.java would be field postId then should be postId here
     private List<Comment> comments;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
 
 }

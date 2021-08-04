@@ -36,7 +36,12 @@ public class PostController {
     }
 
     @PostMapping("/posts")
-    public void addPost() {
+    public Post addPost(@RequestBody Post post) {
+        return postService.addPost(post);
+    }
 
+    @PutMapping("/posts")
+    public Post editPost(@RequestBody Post post) {
+        return postService.editPost(post);
     }
 }

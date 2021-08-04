@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -33,4 +34,16 @@ public class PostService {
         return "Hello Service";
     }
 
+    public Post addPost(Post post) {
+        return postRepository.save(post);
+    }
+
+    @Transactional //grouping to one transaction for whole db transactions in method (here for findById and save)
+    public Post editPost(Post post) {
+        Post editedPost = postRepository.findById(post.getId()).orElseThrow();
+        editedPost.setTitle(post.getTitle());
+        editedPost.setContent(post.getTitle());
+//        return postRepository.save(editedPost);
+        return editedPost; // not need to make JPA save() because entity was modified and Hibernate know it.
+    }
 }
